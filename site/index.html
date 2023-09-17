@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+	
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="stylesheet" href="./main_tailwind.css">
+
+	<title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+
+<body class="font-body h-screen bg-gradient-to-b bg-no-repeat from-RadialGradientFrom to-RadialGradientTo">
+	<div class="main-container">
+
+		<header class="h-44 sm:h-80 py-8 sm:py-14 flex justify-center">
+			<div class="header-container w-4/5 2xl:w-2/5 flex justify-between items-center p-3 sm:p-6 border-solid border-4 border-HeaderOutline rounded-xl sm:rounded-3xl">
+				<div class="logo">
+					<img class="w-24 sm:w-52" src="images/logo.svg" alt="">
+				</div>
+				<div class="score bg-white flex flex-col items-center justify-center rounded-xl px-7 sm:px-12 py-3">
+					<div class="text-ScoreText text-xs sm:text-2xl font-light">SCORE</div>
+					<div class="score-number text-DarkText text-5xl sm:text-7xl font-bold">12</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="game-container h-mobile-header sm:h-desktop-header flex flex-col items-center justify-center">
+			<!-- <div class="triangle"> -->
+				<!-- <img class="" src="./images/bg-triangle.svg" alt=""> -->
+			<!-- </div> -->
+			<!-- <div class="absolute-container"> -->
+				<div class="first-container flex justify-evenly sm:justify-center w-full mb-10">
+					<div class="one bg-white rounded-full border-solid border-15 border-PaperGradientFrom mr- p-7 cursor-pointer sm:mr-24">
+						<img class="" src="./images/icon-paper.svg" alt="">
+					</div>
+					<div class="two bg-white rounded-full border-solid border-15 border-ScissorsGradientFrom p-7 cursor-pointer">
+						<img class="" src="./images/icon-scissors.svg" alt="">
+					</div>
+				</div>
+				<div class="second-container flex">
+					<div class="three bg-white rounded-full border-solid border-15 border-RockGradientFrom p-7 cursor-pointer">
+						<img src="./images/icon-rock.svg" alt="">
+					</div>
+				</div>
+				<!-- </div> -->
+		</div>
+		<div class="rules-btn text-center">
+			<button class="text-white border-solid border-2 p-2 rounded-lg">RULES</button>
+		</div>
+
+	</div>
+	<script src="main.js"></script>
+</body>
+
+</html>
+
+
+<!-- TODO: circle shadow design -->
+<!-- TODO: triangle -->
