@@ -9,6 +9,8 @@ module.exports = {
 				DarkText: "hsl(229, 25%, 31%)",
 				ScoreText: "hsl(229, 64%, 46%)",
 				HeaderOutline: "hsl(217, 16%, 45%)",
+				// ? background
+				transparentColor: "rgb(15 23 42 / 80%)",
 				// ? gradiants
 				RadialGradientFrom: "hsl(214, 47%, 23%)",
 				RadialGradientTo: "hsl(237, 49%, 15%)",
@@ -27,7 +29,8 @@ module.exports = {
 				body: ['Barlow Semi Condensed'],
 			},
 			borderWidth: {
-				'15': '15px'
+				'desktop': '25px',
+				'mobile': '15px'
 			},
 			height: {
 				'mobile-header': 'calc(100vh - 11rem - 4rem)',

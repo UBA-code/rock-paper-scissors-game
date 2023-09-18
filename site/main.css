@@ -4,13 +4,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.main-container .game-container .absolute{
-	/* position: absolute;
-	width: 100%;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%); */
-	/* z-index: -1; */
+
+
+.header-container {
+	@apply w-4/5 2xl:w-2/5 flex justify-between items-center p-3 sm:p-6 border-solid border-4 border-HeaderOutline rounded-xl sm:rounded-3xl;
+}
+
+.game-icon {
+	@apply w-fit bg-white rounded-full border-solid border-mobile sm:border-desktop p-7 cursor-pointer;
+}
+
+.icon {
+	@apply w-16 h-16 sm:w-32 sm:h-32;
 }
 
 
+.suggestion-block {
+	@apply flex flex-col items-center justify-center;
+}
