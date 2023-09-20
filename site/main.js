@@ -8,8 +8,8 @@ let rulesClose;
 	rulesPage.innerHTML = `
 	<div class="rules-container h-screen md:h-1/2 w-screen md:w-1/3 flex flex-wrap flex-col bg-white justify-evenly items-center rounded-lg">
 	<h1 class="text-DarkText text-4xl font-extrabold">RULES</h1>
-	<img src="./images/image-rules.svg"/>
-	<img class="close-btn cursor-pointer" src="./images/icon-close.svg"/>
+	<img src="./site/images/image-rules.svg"/>
+	<img class="close-btn cursor-pointer" src="./site/images/icon-close.svg"/>
 	</div>
 	`;
 	document.body.append(rulesPage);
