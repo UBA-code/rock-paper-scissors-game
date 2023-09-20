@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./site/images/favicon-32x32.png">
+	<link rel="stylesheet" href="./site/main_tailwind.css">
+
+	<title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+
+<body class="font-body h-screen bg-gradient-to-b bg-no-repeat from-RadialGradientFrom to-RadialGradientTo">
+	<div class="main-container h-screen flex flex-col justify-around">
+		<!-- <div class="main-container"> -->
+
+		<header class="py-8 sm:py-14 flex justify-center">
+			<!-- <header class="h-44 sm:h-80 py-8 sm:py-14 flex justify-center"> -->
+			<div class="header-container">
+				<div class="logo">
+					<img class="w-24 sm:w-52" src="site/images/logo.svg" alt="">
+				</div>
+				<div class="score bg-white flex flex-col items-center justify-center rounded-xl px-7 sm:px-12 py-3">
+					<div class="text-ScoreText text-xs sm:text-2xl font-light">SCORE</div>
+					<div class="score-number text-DarkText text-5xl sm:text-7xl font-bold"></div>
+				</div>
+			</div>
+		</header>
+
+
+
+		<div class="center-container flex flex-col items-center justify-center">
+			<div class="game-container w-full grid grid-cols-2 gap-8 lg:gap-20">
+				<div class="suggestion-block items-end">
+					<div class="center-container flex flex-col items-center justify-center">
+						<div class="suggestion one game-icon border-PaperGradientFrom" data-type="paper">
+							<img class="icon" src="./site/images/icon-paper.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="suggestion-block items-start">
+					<div class="center-container flex flex-col items-center justify-center">
+						<div class="suggestion two game-icon border-ScissorsGradientFrom" data-type="scissors">
+							<img class="icon" src="./site/images/icon-scissors.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="suggestion-block col-span-2 flex justify-center">
+					<div class="center-container flex flex-col items-center justify-center">
+						<div class="suggestion three game-icon border-RockGradientFrom" data-type="rock">
+							<img class="icon" src="./site/images/icon-rock.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<!-- </div> -->
+			</div>
+		</div>
+		<div class="rules-btn text-center">
+			<button class="text-white border-solid border-2 py-2 px-8 rounded-lg">RULES</button>
+		</div>
+
+	</div>
+	<script src="./site/main.js"></script>
+</body>
+
+</html>
+
+
+<!-- TODO: circle shadow design -->
+<!-- TODO: triangle -->

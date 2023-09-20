@@ -33,17 +33,61 @@ document.body.addEventListener("keyup", (n)=>{
 
 let score = document.querySelector(".main-container header .score-number");
 let choices = document.querySelectorAll(".main-container .game-container .suggestion");
-let playerPlace = document.querySelector(".main-container .game-container .first-container .suggestion-block:nth-child(1)");
-let bootPlace = document.querySelector(".main-container .game-container .first-container .suggestion-block:nth-child(2)");
+let gameArea = document.querySelector(".main-container .game-container");
+let playerPlace = gameArea.querySelector(".suggestion-block:nth-child(1) .center-container");
+let bootPlace = gameArea.querySelector(".suggestion-block:nth-child(2) .center-container");
+let resultPlace = gameArea.querySelector(".suggestion-block:nth-child(3) .center-container");
 // let paper = document.querySelectorAll();
 
+localStorage.getItem("score") === null ? localStorage.setItem("score", "0") : score.innerHTML = localStorage.getItem("score");;
+
+function printResult(resultMsg = "default", scoreValue)
+{
+	gameArea.className += " md:grid-cols-3";
+	resultPlace.parentNode.className += " flex flex-col justify-center items-center";
+	resultPlace.parentNode.classList.add("md:col-span-1");
+	resultPlace.parentNode.classList.add("md:order-1");
+	bootPlace.parentNode.classList.add("md:order-2");
+	resultPlace.classList.add('h-36', 'w-fit', 'justify-between');
+	resultPlace.innerHTML = `
+		<h1 class="text-6xl text-white font-bold">${resultMsg}</h1>
+		<button
+			class="retry-btn transition text-xl tracking-widest text-RadialGradientFrom w-full font-normal bg-white py-4 rounded-xl
+			hover:text-red-600">PLAY AGAIN</button>
+	`;
+	document.querySelector(".game-container .retry-btn").addEventListener("click", _=>{location.reload()});
+	let tmp = +localStorage.getItem("score");
+	if (tmp == 0 && scoreValue == -1)
+		return ;
+	localStorage.setItem("score", tmp + scoreValue);
+	score.innerHTML = localStorage.getItem("score");
+}
+
+function checkResult(choices, player, boot)
+{
+	for (let i = 0; i < choices.length; i++)
+	{
+		if (choices[i].dataset.type == player.dataset.type)
+		{
+			let next = i + 1 >= choices.length ? choices[0] : choices[i + 1];
+			let previous = i - 1 < 0 ? choices[choices.length - 1] : choices[i - 1];
+			if (next.dataset.type == boot.dataset.type)
+				printResult("YOU LOSE", -1);
+			else if (previous.dataset.type == boot.dataset.type)
+				printResult("YOU WINE", 1);
+			else
+				printResult("DRAW", 0);
+			return ;
+		}
+	}
+}
 
 function game() {
 	choices.forEach((n)=>{
 		n.addEventListener("click", _=>{
-			let random = choices[Math.ceil(Math.random() * 2)].cloneNode(true);
 			let message = document.createElement("h1");
-			message.className = "text-center mt-10 text-white text-2xl";
+			let random = choices[Math.floor(Math.random() * 3)].cloneNode(true);
+			message.className = "text-center mt-10 text-white text-xl";
 			choices.forEach((n)=>{n.remove()});
 			// ? player place
 			{
@@ -58,7 +102,9 @@ function game() {
 					bootPlace.append(random);
 					bootPlace.append(message.cloneNode(true));
 				}
-				console.log(n.cloneNode(true));
+				setTimeout(() => {
+					checkResult(choices, n, random);
+				}, 500);
 			}, 800);
 			return ;
 		});

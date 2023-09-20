@@ -35,6 +35,10 @@ module.exports = {
 			height: {
 				'mobile-header': 'calc(100vh - 11rem - 4rem)',
 				'desktop-header': 'calc(100vh - 20rem - 4rem)',
+			},
+			width: {
+				'game-mobile': '90%',
+				'game-tablet': '42rem',
 			}
 		}
 	}
